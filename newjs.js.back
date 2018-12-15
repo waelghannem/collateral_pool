@@ -1,0 +1,33 @@
+const pool_params = require('./config/pool_params')
+const exec = require('child_process').exec;
+const bitcoin_rpc = require('node-bitcoin-rpc')
+const fs = require('fs')
+const readLastLines = require('read-last-lines');
+const axios = require('axios'); 
+
+
+
+function get_mn_outputs(mn_cli_file) {
+    return new Promise(function (resolve, reject) {
+        exec(`sh get_mn_outputs.sh ${mn_cli_file}`, (err, stdout, stderr) => {
+            if (!err) {
+                resolve(stdout)
+
+            } else {
+                reject(err)
+            }
+        });
+    })
+}
+(async function(){
+    var outputs = await get_mn_outputs('hostmasternode-cli')	
+    var outputjson = JSON.parse(outputs)
+    for(let key of Object.keys(outputjson)){
+        console.log(key)
+        console.log(outputjson[key])
+    } 
+    console.log("outputs ", outputs)
+})() 
+
+
+ 

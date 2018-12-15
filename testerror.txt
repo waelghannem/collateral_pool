@@ -1,0 +1,59 @@
+server started listening on port  3014
+connected to database :  mongodb://localhost:27017/database1
+connected to database :  mongodb://localhost:27017/database1
+connected to db :mongodb://localhost:27017/database1
+create_masternodes tasks
+hmn  ==  hmn
+res1.result.vin.length is :  2
+res1.result.vin is :  [ { txid:
+     'b162af738d9fa7baed93fb5f9b1b83c1295c16fddd4a471e43b027a51d2ff178',
+    vout: 0,
+    scriptSig:
+     { asm:
+        '3045022100da4e0068f3c16e1168ff980f0d6185eadc0ce38a972daefd5fa6fa6264e7fcbf022000efd03c1f95ec76e61fa373e2fe1f0943b8363ef94771f9f563876b3594e8cc[ALL] 02cd73d1a9cfd3f713f25a51e732804d5bac23a4b9cc74f12d6480cabe0f4651f7',
+       hex:
+        '483045022100da4e0068f3c16e1168ff980f0d6185eadc0ce38a972daefd5fa6fa6264e7fcbf022000efd03c1f95ec76e61fa373e2fe1f0943b8363ef94771f9f563876b3594e8cc012102cd73d1a9cfd3f713f25a51e732804d5bac23a4b9cc74f12d6480cabe0f4651f7' },
+    sequence: 4294967294 },
+  { txid:
+     'b162af738d9fa7baed93fb5f9b1b83c1295c16fddd4a471e43b027a51d2ff178',
+    vout: 1,
+    scriptSig:
+     { asm:
+        '3044022056b2b8273921616a3e6a2af22204d7555da6d6f093e384455adf5d0cf28eb63b022063f68828a88a6b42a0ad6e90604acf57c628f208f5f96c18703b1f9a4e2d9234[ALL] 02c54ed8e8a94ee6f2ea28a21466c98b6f0e3fa3c02217714746811ceb6b1f95e5',
+       hex:
+        '473044022056b2b8273921616a3e6a2af22204d7555da6d6f093e384455adf5d0cf28eb63b022063f68828a88a6b42a0ad6e90604acf57c628f208f5f96c18703b1f9a4e2d9234012102c54ed8e8a94ee6f2ea28a21466c98b6f0e3fa3c02217714746811ceb6b1f95e5' },
+    sequence: 4294967294 } ]
+transaction with mutli inputs
+999.999994
+data2[i].masternodes.length =  0
+masternodes are equal to expected masternodes's number
+res1.result.vin.length is :  2
+res1.result.vin is :  [ { txid:
+     'b162af738d9fa7baed93fb5f9b1b83c1295c16fddd4a471e43b027a51d2ff178',
+    vout: 0,
+    scriptSig:
+     { asm:
+        '3045022100da4e0068f3c16e1168ff980f0d6185eadc0ce38a972daefd5fa6fa6264e7fcbf022000efd03c1f95ec76e61fa373e2fe1f0943b8363ef94771f9f563876b3594e8cc[ALL] 02cd73d1a9cfd3f713f25a51e732804d5bac23a4b9cc74f12d6480cabe0f4651f7',
+       hex:
+        '483045022100da4e0068f3c16e1168ff980f0d6185eadc0ce38a972daefd5fa6fa6264e7fcbf022000efd03c1f95ec76e61fa373e2fe1f0943b8363ef94771f9f563876b3594e8cc012102cd73d1a9cfd3f713f25a51e732804d5bac23a4b9cc74f12d6480cabe0f4651f7' },
+    sequence: 4294967294 },
+  { txid:
+     'b162af738d9fa7baed93fb5f9b1b83c1295c16fddd4a471e43b027a51d2ff178',
+    vout: 1,
+    scriptSig:
+     { asm:
+        '3044022056b2b8273921616a3e6a2af22204d7555da6d6f093e384455adf5d0cf28eb63b022063f68828a88a6b42a0ad6e90604acf57c628f208f5f96c18703b1f9a4e2d9234[ALL] 02c54ed8e8a94ee6f2ea28a21466c98b6f0e3fa3c02217714746811ceb6b1f95e5',
+       hex:
+        '473044022056b2b8273921616a3e6a2af22204d7555da6d6f093e384455adf5d0cf28eb63b022063f68828a88a6b42a0ad6e90604acf57c628f208f5f96c18703b1f9a4e2d9234012102c54ed8e8a94ee6f2ea28a21466c98b6f0e3fa3c02217714746811ceb6b1f95e5' },
+    sequence: 4294967294 } ]
+transaction with mutli inputs
+res1.result.vin.length is :  1
+res1.result.vin is :  [ { txid:
+     '2ca41d7106a88aa8739b4f854a7521c7fd49b37c6e69290cdfe78fea47e3585b',
+    vout: 0,
+    scriptSig:
+     { asm:
+        '3044022000dd926e92f3cf2f4cfa314057347b9a00a55a1fcb0a8a16e42fc5e0710b6bc802202252df0e3699604aa4bcd0926003b60e20e2547ecccea984ad38f8fc34f9bb1f[ALL] 039f3cd4f8482fa11846e7ae35ba1ebf02e5695db8a5cde905f71f94aca9a64cd1',
+       hex:
+        '473044022000dd926e92f3cf2f4cfa314057347b9a00a55a1fcb0a8a16e42fc5e0710b6bc802202252df0e3699604aa4bcd0926003b60e20e2547ecccea984ad38f8fc34f9bb1f0121039f3cd4f8482fa11846e7ae35ba1ebf02e5695db8a5cde905f71f94aca9a64cd1' },
+    sequence: 4294967294 } ]

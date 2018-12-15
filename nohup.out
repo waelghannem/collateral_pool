@@ -1,0 +1,10 @@
+
+
+************************
+EXCEPTION: 15dbwrapper_error       
+Database I/O error       
+hostmasternode in ProcessMessages()       
+
+Error: Error: A fatal internal error occurred, see debug.log for details
+Error: Error: A fatal internal error occurred, see debug.log for details
+Error: Cannot obtain a lock on data directory /root/.hostmasternodecore. Hostmasternode Core is probably already running.

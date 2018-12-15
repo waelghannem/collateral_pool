@@ -1,0 +1,264 @@
+Hit:1 http://archive.ubuntu.com/ubuntu xenial InRelease
+Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+Hit:3 http://ppa.launchpad.net/bitcoin/bitcoin/ubuntu xenial InRelease
+Get:4 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Ign:5 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 InRelease
+Hit:6 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 Release
+Hit:7 https://deb.nodesource.com/node_10.x xenial InRelease
+Get:9 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Fetched 323 kB in 0s (441 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (7.47.0-1ubuntu2.11).
+git is already the newest version (1:2.7.4-0ubuntu1.6).
+nano is already the newest version (2.5.3-2ubuntu2).
+htop is already the newest version (2.0.1-1ubuntu1).
+The following package was automatically installed and is no longer required:
+  libdb5.3++
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 54 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+software-properties-common is already the newest version (0.96.20.7).
+The following package was automatically installed and is no longer required:
+  libdb5.3++
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 54 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+autotools-dev is already the newest version (20150820.1).
+build-essential is already the newest version (12.1ubuntu2).
+libtool is already the newest version (2.4.6-0.1).
+pkg-config is already the newest version (0.29.1-0ubuntu1).
+libssl-dev is already the newest version (1.0.2g-1ubuntu4.14).
+The following package was automatically installed and is no longer required:
+  libdb5.3++
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 54 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+libboost-all-dev is already the newest version (1.58.0.1ubuntu1).
+libzmq3-dev is already the newest version (4.1.4-7).
+The following package was automatically installed and is no longer required:
+  libdb5.3++
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 54 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+libevent-dev is already the newest version (2.0.21-stable-2ubuntu0.16.04.1).
+The following package was automatically installed and is no longer required:
+  libdb5.3++
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 54 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+libminiupnpc-dev is already the newest version (1.9.20140610-2ubuntu2.16.04.2).
+The following package was automatically installed and is no longer required:
+  libdb5.3++
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 54 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+autoconf is already the newest version (2.69-9).
+The following package was automatically installed and is no longer required:
+  libdb5.3++
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 54 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+automake is already the newest version (1:1.15-4ubuntu1).
+unzip is already the newest version (6.0-20ubuntu1).
+The following package was automatically installed and is no longer required:
+  libdb5.3++
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 54 not upgraded.
+OK
+Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+Hit:2 http://archive.ubuntu.com/ubuntu xenial InRelease
+Hit:3 http://ppa.launchpad.net/bitcoin/bitcoin/ubuntu xenial InRelease
+Ign:4 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 InRelease
+Hit:5 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 Release
+Hit:6 https://deb.nodesource.com/node_10.x xenial InRelease
+Get:7 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:9 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Fetched 323 kB in 0s (447 kB/s)
+Reading package lists...
+Ign:1 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 InRelease
+Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+Hit:3 http://ppa.launchpad.net/bitcoin/bitcoin/ubuntu xenial InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu xenial InRelease
+Hit:5 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 Release
+Hit:6 https://deb.nodesource.com/node_10.x xenial InRelease
+Get:7 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:9 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Fetched 323 kB in 0s (427 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+autoconf is already the newest version (2.69-9).
+automake is already the newest version (1:1.15-4ubuntu1).
+build-essential is already the newest version (12.1ubuntu2).
+libgmp-dev is already the newest version (2:6.1.0+dfsg-2).
+libgmp3-dev is already the newest version (2:6.1.0+dfsg-2).
+libtool is already the newest version (2.4.6-0.1).
+autogen is already the newest version (1:5.18.7-3).
+libboost-all-dev is already the newest version (1.58.0.1ubuntu1).
+libqrencode-dev is already the newest version (3.4.4-1).
+libminiupnpc-dev is already the newest version (1.9.20140610-2ubuntu2.16.04.2).
+libssl-dev is already the newest version (1.0.2g-1ubuntu4.14).
+libcrypto++-dev is already the newest version (5.6.1-9ubuntu0.1).
+The following packages were automatically installed and are no longer required:
+  libdb4.8 libdb4.8++
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  libdb5.3++-dev libdb5.3-dev
+Suggested packages:
+  db5.3-doc
+The following packages will be REMOVED:
+  libdb4.8++-dev libdb4.8-dev
+The following NEW packages will be installed:
+  libdb++-dev libdb5.3++-dev libdb5.3-dev
+0 upgraded, 3 newly installed, 2 to remove and 54 not upgraded.
+Need to get 0 B/1,496 kB of archives.
+After this operation, 1,961 kB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 123346 files and directories currently installed.)
+Removing libdb4.8++-dev (4.8.30-xenial4) ...
+Removing libdb4.8-dev (4.8.30-xenial4) ...
+Selecting previously unselected package libdb5.3-dev.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 123327 files and directories currently installed.)
+Preparing to unpack .../libdb5.3-dev_5.3.28-11ubuntu0.1_amd64.deb ...
+Unpacking libdb5.3-dev (5.3.28-11ubuntu0.1) ...
+Selecting previously unselected package libdb5.3++-dev.
+Preparing to unpack .../libdb5.3++-dev_5.3.28-11ubuntu0.1_amd64.deb ...
+Unpacking libdb5.3++-dev (5.3.28-11ubuntu0.1) ...
+Selecting previously unselected package libdb++-dev:amd64.
+Preparing to unpack .../libdb++-dev_1%3a5.3.21~exp1ubuntu2_amd64.deb ...
+Unpacking libdb++-dev:amd64 (1:5.3.21~exp1ubuntu2) ...
+Setting up libdb5.3-dev (5.3.28-11ubuntu0.1) ...
+Setting up libdb5.3++-dev (5.3.28-11ubuntu0.1) ...
+Setting up libdb++-dev:amd64 (1:5.3.21~exp1ubuntu2) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  libdb4.8++ libdb5.3++
+Use 'apt autoremove' to remove them.
+Suggested packages:
+  db4.8-doc
+The following packages will be REMOVED:
+  libdb++-dev libdb5.3++-dev libdb5.3-dev
+The following NEW packages will be installed:
+  libdb4.8-dev
+0 upgraded, 1 newly installed, 3 to remove and 54 not upgraded.
+Need to get 0 B/632 kB of archives.
+After this operation, 3,640 kB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 123341 files and directories currently installed.)
+Removing libdb++-dev:amd64 (1:5.3.21~exp1ubuntu2) ...
+Removing libdb5.3++-dev (5.3.28-11ubuntu0.1) ...
+Removing libdb5.3-dev (5.3.28-11ubuntu0.1) ...
+Selecting previously unselected package libdb4.8-dev.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 123327 files and directories currently installed.)
+Preparing to unpack .../libdb4.8-dev_4.8.30-xenial4_amd64.deb ...
+Unpacking libdb4.8-dev (4.8.30-xenial4) ...
+Setting up libdb4.8-dev (4.8.30-xenial4) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following package was automatically installed and is no longer required:
+  libdb5.3++
+Use 'apt autoremove' to remove it.
+The following NEW packages will be installed:
+  libdb4.8++-dev
+0 upgraded, 1 newly installed, 0 to remove and 54 not upgraded.
+Need to get 0 B/647 kB of archives.
+After this operation, 5,601 kB of additional disk space will be used.
+Selecting previously unselected package libdb4.8++-dev.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 123337 files and directories currently installed.)
+Preparing to unpack .../libdb4.8++-dev_4.8.30-xenial4_amd64.deb ...
+Unpacking libdb4.8++-dev (4.8.30-xenial4) ...
+Setting up libdb4.8++-dev (4.8.30-xenial4) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+libminiupnpc-dev is already the newest version (1.9.20140610-2ubuntu2.16.04.2).
+The following package was automatically installed and is no longer required:
+  libdb5.3++
+Use 'apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 54 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+libzmq3-dev is already the newest version (4.1.4-7).
+The following package was automatically installed and is no longer required:
+  libdb5.3++
+Use 'apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 54 not upgraded.
+              total        used        free      shared  buff/cache   available
+Mem:        2048080      377540      312128       18096     1358412     1438260
+Swap:       9215992       88332     9127660
+Hostmasternode Core server stopping
+{
+  "version": 120302,
+  "protocolversion": 70210,
+  "walletversion": 61000,
+  "balance": 0.00000000,
+  "privatesend_balance": 0.00000000,
+  "blocks": 0,
+  "timeoffset": 0,
+  "connections": 1,
+  "proxy": "",
+  "difficulty": 0.000244140625,
+  "testnet": false,
+  "keypoololdest": 1543482826,
+  "keypoolsize": 999,
+  "paytxfee": 0.00000000,
+  "relayfee": 0.00001000,
+  "errors": ""
+}
+Hit:1 http://ppa.launchpad.net/bitcoin/bitcoin/ubuntu xenial InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu xenial InRelease
+Get:3 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+Ign:4 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 InRelease
+Hit:5 https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 Release
+Get:6 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Hit:7 https://deb.nodesource.com/node_10.x xenial InRelease
+Get:9 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Fetched 323 kB in 0s (441 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+python-virtualenv is already the newest version (15.0.1+ds-3ubuntu1).
+The following package was automatically installed and is no longer required:
+  libdb5.3++
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 54 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+virtualenv is already the newest version (15.0.1+ds-3ubuntu1).
+The following package was automatically installed and is no longer required:
+  libdb5.3++
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 54 not upgraded.
+New python executable in /root/sentinel/venv/bin/python
+Installing setuptools, pip, wheel...
+done.
+Requirement already satisfied: inflection==0.3.1 in ./venv/lib/python2.7/site-packages (from -r requirements.txt (line 1)) (0.3.1)
+Requirement already satisfied: peewee==2.8.3 in ./venv/lib/python2.7/site-packages (from -r requirements.txt (line 2)) (2.8.3)
+Requirement already satisfied: py==1.4.31 in ./venv/lib/python2.7/site-packages (from -r requirements.txt (line 3)) (1.4.31)
+Requirement already satisfied: pycodestyle==2.3.1 in ./venv/lib/python2.7/site-packages (from -r requirements.txt (line 4)) (2.3.1)
+Requirement already satisfied: pytest==3.0.1 in ./venv/lib/python2.7/site-packages (from -r requirements.txt (line 5)) (3.0.1)
+Requirement already satisfied: python-bitcoinrpc==1.0 in ./venv/lib/python2.7/site-packages (from -r requirements.txt (line 6)) (1.0)
+Requirement already satisfied: simplejson==3.8.2 in ./venv/lib/python2.7/site-packages (from -r requirements.txt (line 7)) (3.8.2)
+144.202.19.2:8232  4dpnGzoDs54xtVEmSMUQoNgRrgGbjgsR6cmUV46TWCyiufQd2dr
