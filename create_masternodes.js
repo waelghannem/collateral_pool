@@ -28,23 +28,23 @@ function create_masternode_Promise(credentials) {
     })
 }
 
-function getbalance(file,cmd) {
+function getbalance(file, cmd) {
     console.log("try get balance ")
-        return new Promise(function (resolve, reject) {
-            exec(`sh ${file} ${cmd}`, (err, stdout, stderr) => {
-                if (err) {
-                    reject(err)
-                } else if (stderr) {
-                    reject(stderr)
+    return new Promise(function (resolve, reject) {
+        exec(`sh ${file} ${cmd}`, (err, stdout, stderr) => {
+            if (err) {
+                reject(err)
+            } else if (stderr) {
+                reject(stderr)
+            } else {
+                if (stdout) {
+                    resolve(stdout)
                 } else {
-                    if (stdout) {
-                        resolve(stdout)
-                    } else {
-                        reject("restart_server_file error")
-                    }
+                    reject("restart_server_file error")
                 }
-            });
-        })
+            }
+        });
+    })
 
 }
 
@@ -105,7 +105,7 @@ function findAndUpdate(masternode, coin) {
     })
 } */
 
-var task = cron.schedule('*/6 * * * *', async () => {
+var task = cron.schedule('*/10 * * * *', async () => {
     console.log("this task is running every 10 mins")
 
     console.log("create_masternodes tasks")
@@ -123,7 +123,7 @@ var task = cron.schedule('*/6 * * * *', async () => {
                     if (credentials.name == data2[i].name) {
                         try {
                             //var balance = await getbalance(credentials)
-                            var balanceres = await getbalance("getbalance.sh","hostmasternode-cli")
+                            var balanceres = await getbalance("getbalance.sh", "hostmasternode-cli")
                             var balance = Number(balanceres)
                             console.log("balance = ", balance)
                             excpected_masternodes_number = Math.floor(balance / data2[i].collateral)
@@ -134,15 +134,14 @@ var task = cron.schedule('*/6 * * * *', async () => {
                             if (excpected_masternodes_number > data2[i].masternodes.length) {
                                 console.log("we need to create other masternodes")
                                 number_masternode_must_be_created = excpected_masternodes_number - data2[i].masternodes.length
-                               // for (let j = 0; j <= number_masternode_must_be_created; j++) {
-                                    try {
-                                        result_create_msternode = await createMasternode.createMasternode()
-                                        let collateral_collect = 0;
-                                        let collateral_collect_members = [];
-                                        
-
-                                        if (data2[i].participants.length > 0) {
-                                        for (let index = 0; index < data2[i].participants.length; i++) {
+                                // for (let j = 0; j <= number_masternode_must_be_created; j++) {
+                                try {
+                                    result_create_msternode = await createMasternode.createMasternode()
+                                    console.log("result create masternode : ", result_create_msternode)
+                                    let collateral_collect = 0;
+                                    let collateral_collect_members = [];
+                                    if (data2[i].participants.length > 0) {
+                                        for (let index = 0; index < data2[i].participants.length; index++) {
                                             if (collateral_collect < data2[i].collateral) {
                                                 collateral_collect += data2[i].participants[index].amount;
                                                 var collateral_percentage = data2[i].collateral / data2[i].participants[index].amount
@@ -154,29 +153,33 @@ var task = cron.schedule('*/6 * * * *', async () => {
                                             }
                                         }
                                     }
+
+
+
                                     const masternode = {
                                         name: result_create_msternode.masternode_name,
                                         address : result_create_msternode.masternode_address,
                                         members: collateral_collect_members,
                                         status: "enabled"
                                     }
-                                       
-                                        try {
+                                    try {
+                                        console.log("++++++++++++++++++++++++++++++++++++++")
+                                        console.log(data2[i])
+                                        console.log("++++++++++++++++++++++++++++++++++++++")
+                                        var resultofaddingmn = await findAndUpdate(masternode, data2[i])
 
-                                            var resultofaddingmn = await findAndUpdate(masternode, data2[i])
-
-                                            console.log(resultofaddingmn)
-
-                                        } catch (error) {
-
-                                            console.log(error)
-
-                                        }
+                                        console.log(resultofaddingmn)
 
                                     } catch (error) {
+
                                         console.log(error)
+
                                     }
-                               // }
+
+                                } catch (error) {
+                                    console.log(error)
+                                }
+                                // }
                             } else {
                                 console.log("masternodes are equal to expected masternodes's number")
                             }

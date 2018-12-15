@@ -217,15 +217,14 @@ module.exports.createMasternode = async function () {
                     var readLine = await readMnFromFile()
                     console.log("readLine ",readLine)
 
-                    console.log(readLine)
-                    const explorer_url = "https://explorer.hostmasternode.com/insight-api/blocks?limit=1"
+             /*        const explorer_url = "https://explorer.hostmasternode.com/insight-api/blocks?limit=1"
                     axios.get(`${explorer_url}`)
                         .then(async (response) => {
                             console.log("data from explorer ", response.data.blocks[0].height);
                             console.log("type of data from explorer ", typeof (response.data.blocks[0].height));
                             let block_count = 0
                             let explorer_block = response.data.blocks[0].height
-                            console.log("initial blockcout ", block_count)
+                            console.log("initial blockcout ", block_count) */
                             try {
                                 var res = await add_sync_block('add_sync_block.sh', 'blocks')
                                 console.log("add_sync_block ",add_sync_block)
@@ -310,12 +309,13 @@ module.exports.createMasternode = async function () {
                                                     try {
                                                         var transactionInfo = await getTransactionInfo('gettransactioninfo.sh', 'hostmasternode-cli', freeOutputs.txid)
                                                         console.log("transactionInfo ",transactionInfo)
+                                                        var transactionInfojson = JSON.parse(transactionInfo)
 
-                                                        if (transactionInfo) {
+                                                        if (transactionInfojson.details[0]) {
                                                             return {
                                                                 success: true,
                                                                 masternode_name: mnalias,
-                                                                masternode_address: transactionInfo.details.address
+                                                                masternode_address: transactionInfojson.details[0].address
                                                             }
                                                         } else {
                                                             return { success: false, msg: "error when retrieving txInfo" }
@@ -349,7 +349,7 @@ module.exports.createMasternode = async function () {
                                 return { success: false, msg: error }
                             }
 
-                        }).catch(error => {
+    /*                     }).catch(error => {
                             if (error.response) {
                                 if (error.response.data == "Invalid address: Checksum mismatch. Code:1") {
                                     return { success: false, msg: error.response.data }
@@ -362,7 +362,7 @@ module.exports.createMasternode = async function () {
                                 return { success: false, msg: error }
 
                             }
-                        });
+                        }); */
 
 
 
@@ -384,6 +384,5 @@ module.exports.createMasternode = async function () {
     }
 
 }
-
 
 

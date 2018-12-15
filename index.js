@@ -1,7 +1,5 @@
 const express = require('express')
 const bodyParser = require('body-parser')
- 
-
 
     
 const passport = require('passport')
@@ -16,12 +14,21 @@ const coins = require('./routes/coins')
 const depositRequests = require('./routes/deposit_requests')
 const depositsStatus = require('./routes/deposits_status')
 //const check_deposit = require('./check_deposit')
-const create_masternodes = require('./create_masternodes')
-const reward_distribution = require('./reward_distribution')
+//const create_masternodes = require('./create_masternodes')
+//const reward_distribution = require('./reward_distribution')
 const cookieParser = require('cookie-parser');
 
 //const config = require('./config/database')
 const config = require('./config/config').get(process.env.NODE_ENV);
+
+//const send_collateral = require('./send_collateral')
+
+
+
+//send_collateral.start()
+
+
+//setTimeout(() => {send_collateral.stop()},130000)
 
 //console.log(check_deposit);
 //check_deposit()

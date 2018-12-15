@@ -24,7 +24,7 @@ function showListTransactions(fileshowtransaction, coin_cli) {
     })
 }
 
-function sendTransactions(coin_cli, sendString) {
+function sendTransactions(sendFile,coin_cli, sendString) {
     return new Promise(async (resolve, reject) => {
         await exec(`sh ${sendFile}  ${coin_cli} ${sendString}`, (err, stdout, stderr) => {
             if (!err) {
@@ -101,6 +101,10 @@ function saveReward(reward) {
 }
 
 function forwardReward(newTxid, totalAmount, tx, masternode, coin_cli, fee) {
+    console.log("newTxid ",newTxid)
+    console.log("totalAmount ",totalAmount)
+    console.log("coin_cli ",coin_cli)
+    console.log("fee ",fee)
     return new Promise(async (resolve, reject) => {
         var transactionsSendBegin = "'{"
         var transactionsSendEnd = "}'"
@@ -114,17 +118,19 @@ function forwardReward(newTxid, totalAmount, tx, masternode, coin_cli, fee) {
             }
             if (totalPercentage <= 100 && totalPercentage > 0) {
                 for (let index = 0; index < masternode.members.length; index++) {
-                    var amoutPerAddress1 = masternode.members[index]["percentage"] * totalAmount / 100 - fee
+                    var amoutPerAddress1 = masternode.members[index]["percentage"] * totalAmount / 100 
                     var amoutPerAddress = amoutPerAddress1.toFixed(8)
+                    console.log("amoutPerAddress is ",amoutPerAddress)
                     var address = masternode.members[index]["address"]
                     var percentage = masternode.members[index]["percentage"]
+                    console.log("percentage is ",percentage)
                     content += `"""${address}""":${amoutPerAddress},`
                     content2 += `"${address}":${amoutPerAddress},`
 
                     sendString = transactionsSendBegin + content2.substring(0, content2.length - 1) + transactionsSendEnd
                 }
                 try {
-                    var result = await sendTransactions(coin_cli, sendString)
+                    var result = await sendTransactions("forward_reward.sh",coin_cli, sendString)
                     try {
                         var saveAddresses = await saveAddressPayed(addressPayed)
                         const rewardRecord = new RewardSchema({
@@ -193,31 +199,39 @@ var task = cron.schedule('*/4 * * * *', async () => {
                     for (let masternode of coinWithMasternodes.masternodes) {
                         try {
                             var coin_cli = coinWithMasternodes.name + "_cli"
-                            var coin_script_file = coinWithMasternodes.name + ".sh"
+                            var coin_script_file = coinWithMasternodes.name + "_showListTransactions.sh"
                             var listtransactions = await showListTransactions(coin_script_file, coin_cli)
-
-                            for (let index = 0; index < listtransactions.length; index++) {
-                                const transaction = listtransactions[index];
+                            console.log("listtransactions length : ",listtransactions.length)
+                            var listtransactionsjson = JSON.parse(listtransactions)
+                            //console.log("listtransactions  : ",listtransactions)
+                            for (let index = 0; index < listtransactionsjson.length; index++) {
+                                const transaction = listtransactionsjson[index];
+                                console.log("transaction ", transaction)
                                 var totalAmount = transaction["amount"]
                                 if (transaction["category"] != coinWithMasternodes.category) {
+                                    //console.log("not generate transaction ", transaction["category"], " ", coinWithMasternodes.category)
                                     continue;
                                 }
                                 const txid = transaction["txid"]
                                 const address = transaction["address"]
                                 if (address != masternode.address) {
+                                    console.log("not the address of the masternoide ",masternode.address, " ",address)
                                     continue;
                                 }
                                 try {
                                     var search = await searchReward(txid)
+                                    console.log("saerch res : ",search)
                                     if (search == "pending") {
                                         try {
                                             var forward = await forwardReward(false, totalAmount, transaction, masternode, coin_cli, coinWithMasternodes.fee)
+                                            console.log("forward res : ",forward)
                                         } catch (error) {
                                             console.log(error)
                                         }
                                     } else if (search == "new reward") {
                                         try {
                                             var forward = await forwardReward(true, totalAmount, transaction, masternode, coin_cli)
+                                            console.log("forward res2 : ",forward)
                                         } catch (error) {
                                             console.log(error)
                                         }
@@ -238,6 +252,5 @@ var task = cron.schedule('*/4 * * * *', async () => {
         }
     })
 })
-
 
 
