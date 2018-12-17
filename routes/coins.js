@@ -104,7 +104,7 @@ router.post('/getParticipants', (req, res, next) => {
 
 
 router.get('/getAllCoins', (req, res, next) => {
-    Coin.find({},{ participants: { $slice: 0 } }, function (err, data) {
+    Coin.find({}, function (err, data) {
 
         if (err) {
             console.log("err ", err)

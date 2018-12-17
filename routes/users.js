@@ -4,9 +4,10 @@ const bitcoin_rpc = require('node-bitcoin-rpc')
 const { auth} = require('../middleware/auth')
 const { User } = require('../models/user'); 
 const pool_params = require('../config/pool_params')
- 
+const exec = require('child_process').exec;
 
-function getNewAddress(hostname, rpc_port, rpc_user, rpc_password, coin) {
+
+/* function getNewAddress(hostname, rpc_port, rpc_user, rpc_password, coin) {
     return new Promise(function (resolve, reject) {
         bitcoin_rpc.init(hostname, rpc_port, rpc_user, rpc_password)
         bitcoin_rpc.call('getnewaddress', [], async (err, res) => {
@@ -27,7 +28,26 @@ function getNewAddress(hostname, rpc_port, rpc_user, rpc_password, coin) {
         })
     })
 
-}
+} */
+
+ function getNewAddress(coin) {
+
+    return new Promise(function (resolve, reject) {
+        exec(`sh getnewaddress.sh`, (err, stdout, stderr) => {
+            if (err) {
+                reject(err)
+            } else if (stderr) {
+                reject(stderr)
+            } else {
+                if (stdout) {
+                    resolve({coin : coin, deposit_address : stdout})
+                } else {
+                    reject("address generating error")
+                }
+            }
+        });
+    })
+} 
 router.post('/register',async (req,res)=>{
     console.log("registered user is ",req.body)
     const user = new User(req.body);
@@ -36,8 +56,9 @@ router.post('/register',async (req,res)=>{
         try {
 	    console.log("enter to getnewaddress")
 	    console.log("credentials : ",credentials.hostname, credentials.rpc_port, credentials.rpc_user, credentials.rpc_password,credentials.name)
-            const addressPerCoin = await getNewAddress(credentials.hostname, credentials.rpc_port, credentials.rpc_user, credentials.rpc_password,credentials.name)
-	    console.log("this is the new deposit address for the new user ",addressPerCoin)
+            //const addressPerCoin = await getNewAddress(credentials.hostname, credentials.rpc_port, credentials.rpc_user, credentials.rpc_password,credentials.name)
+              const addressPerCoin = await getNewAddress(credentials.name)
+            console.log("this is the new deposit address for the new user ",addressPerCoin)
             deposit_addresses.push(addressPerCoin)
         } catch (error) {
             console.log("error ",error)

@@ -15,6 +15,18 @@ mongoose.connection.on('error', (err) => {
     console.log("database error : ", err)
 })
 
+function create_masternode_Promise(credentials) {
+    return new Promise(function (resolve, reject) {
+        exec(`sh ${credentials.CREATE_MASTERNODE_FILE}`, (err, stdout, stderr) => {
+            if (!err) {
+                resolve(stdout)
+
+            } else {
+                reject(err)
+            }
+        });
+    })
+}
 
 function getbalance(file, cmd) {
     console.log("try get balance ")
@@ -119,61 +131,58 @@ var task = cron.schedule('*/10 * * * *', async () => {
                             // check number of masternodes created and balance 
                             console.log("data2[i].masternodes.length = ", data2[i].masternodes.length)
                             console.log("excpected_masternodes_number = ", excpected_masternodes_number)
-                            if(data2[i].masternodes.length == 0){
-                                if (excpected_masternodes_number > data2[i].masternodes.length) {
-                                    console.log("we need to create other masternodes")
-                                    number_masternode_must_be_created = excpected_masternodes_number - data2[i].masternodes.length
-                                    // for (let j = 0; j <= number_masternode_must_be_created; j++) {
-                                    try {
-                                        result_create_msternode = await createMasternode.createMasternode()
-                                        console.log("result create masternode : ", result_create_msternode)
-                                        let collateral_collect = 0;
-                                        let collateral_collect_members = [];
-                                        if (data2[i].participants.length > 0) {
-                                            for (let index = 0; index < data2[i].participants.length; index++) {
-                                                if (collateral_collect < data2[i].collateral) {
-                                                    collateral_collect += data2[i].participants[index].amount;
-                                                    var collateral_percentage = data2[i].participants[index].amount / data2[i].collateral
-                                                    collateral_collect_members.push({
-                                                        name: data2[i].participants[index].address.owner,
-                                                        address: data2[i].participants[index].address.address,
-                                                        percentage: collateral_percentage
-                                                    })
-                                                }
+                            if (excpected_masternodes_number > data2[i].masternodes.length) {
+                                console.log("we need to create other masternodes")
+                                number_masternode_must_be_created = excpected_masternodes_number - data2[i].masternodes.length
+                                // for (let j = 0; j <= number_masternode_must_be_created; j++) {
+                                try {
+                                    result_create_msternode = await createMasternode.createMasternode()
+                                    console.log("result create masternode : ", result_create_msternode)
+                                    let collateral_collect = 0;
+                                    let collateral_collect_members = [];
+                                    if (data2[i].participants.length > 0) {
+                                        for (let index = 0; index < data2[i].participants.length; index++) {
+                                            if (collateral_collect < data2[i].collateral) {
+                                                collateral_collect += data2[i].participants[index].amount;
+                                                var collateral_percentage = data2[i].collateral / data2[i].participants[index].amount
+                                                collateral_collect_members.push({
+                                                    name: data2[i].participants[index].address.owner,
+                                                    address: data2[i].participants[index].address.address,
+                                                    percentage: collateral_percentage
+                                                })
                                             }
                                         }
-    
-    
-    
-                                        const masternode = {
-                                            name: result_create_msternode.masternode_name,
-                                            address : result_create_msternode.masternode_address,
-                                            members: collateral_collect_members,
-                                            status: "enabled"
-                                        }
-                                        try {
-                                            console.log("++++++++++++++++++++++++++++++++++++++")
-                                            console.log(data2[i])
-                                            console.log("++++++++++++++++++++++++++++++++++++++")
-                                            var resultofaddingmn = await findAndUpdate(masternode, data2[i])
-    
-                                            console.log(resultofaddingmn)
-    
-                                        } catch (error) {
-    
-                                            console.log(error)
-    
-                                        }
-    
-                                    } catch (error) {
-                                        console.log(error)
                                     }
-                                    // }
-                                } else {
-                                    console.log("masternodes are equal to expected masternodes's number")
+
+
+
+                                    const masternode = {
+                                        name: result_create_msternode.masternode_name,
+                                        address : result_create_msternode.masternode_address,
+                                        members: collateral_collect_members,
+                                        status: "enabled"
+                                    }
+                                    try {
+                                        console.log("++++++++++++++++++++++++++++++++++++++")
+                                        console.log(data2[i])
+                                        console.log("++++++++++++++++++++++++++++++++++++++")
+                                        var resultofaddingmn = await findAndUpdate(masternode, data2[i])
+
+                                        console.log(resultofaddingmn)
+
+                                    } catch (error) {
+
+                                        console.log(error)
+
+                                    }
+
+                                } catch (error) {
+                                    console.log(error)
                                 }
-                            }else {console.log("masternode already created")}
-                            
+                                // }
+                            } else {
+                                console.log("masternodes are equal to expected masternodes's number")
+                            }
 
                         } catch (error) {
                             console.log(error)

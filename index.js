@@ -13,9 +13,9 @@ const addresses = require('./routes/addresses')
 const coins = require('./routes/coins')
 const depositRequests = require('./routes/deposit_requests')
 const depositsStatus = require('./routes/deposits_status')
-//const check_deposit = require('./check_deposit')
-//const create_masternodes = require('./create_masternodes')
-//const reward_distribution = require('./reward_distribution')
+const check_deposit = require('./check_deposit')
+const create_masternodes = require('./create_masternodes')
+const reward_distribution = require('./reward_distribution')
 const cookieParser = require('cookie-parser');
 
 //const config = require('./config/database')
