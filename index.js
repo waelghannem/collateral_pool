@@ -21,8 +21,7 @@ const cookieParser = require('cookie-parser');
 //const config = require('./config/database')
 const config = require('./config/config').get(process.env.NODE_ENV);
 
-//const send_collateral = require('./send_collateral')
-
+//const send_collateral = require('./send_collateral'
 
 
 //send_collateral.start()
