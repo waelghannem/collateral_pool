@@ -76,7 +76,8 @@ router.post('/login',(req,res)=>{
                     id:user._id,
                     username:user.username,
 		    deposit_addresses : user.deposit_addresses,
-                    user_token : user.token
+                    user_token : user.token,
+		    user : user
                 })
             })
         })
